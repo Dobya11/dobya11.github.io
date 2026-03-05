@@ -6,8 +6,14 @@ const ICONS = {
 };
 
 function getIconHTML(meta){
-    if(meta.icon && (meta.icon.startsWith('/') || meta.icon.startsWith('http'))){
-        return `<img src="${meta.icon}" alt="${meta.text||''}" style="width:18px;height:18px;">`;
+    if(meta.icon){
+        let src = meta.icon;
+        if(typeof src === 'string' && src.startsWith('/')) src = src.slice(1);
+        if(src.startsWith('http')){
+            return `<img src="${src}" alt="${meta.text||''}" style="width:18px;height:18px;">`;
+        }
+        // local-relative
+        return `<img src="${src}" alt="${meta.text||''}" style="width:18px;height:18px;">`;
     }
     return ICONS[meta.icon] || ICONS.link;
 }
@@ -39,7 +45,9 @@ function getIconHTML(meta){
 
             const img = document.createElement('img');
             img.className = 'card-image';
-            img.src = cardData.image?.url || '';
+            let imgSrc = cardData.image?.url || '';
+            if(typeof imgSrc === 'string' && imgSrc.startsWith('/')) imgSrc = imgSrc.slice(1);
+            img.src = imgSrc;
             img.alt = cardData.image?.alt || '';
             card.appendChild(img);
 
@@ -123,7 +131,9 @@ if (data.description && data.description.trim() !== '') {
     const meta = { ...(buttonsDict[act.id]||{}), ...act };
     const btn = document.createElement('a');
     btn.className = 'action-button';
-    btn.href = meta.url || '#';
+    let href = meta.url || '#';
+    if(typeof href === 'string' && href.startsWith('/')) href = href.slice(1);
+    btn.href = href;
     btn.target = '_blank';
     btn.style.background = meta.color || '#0e79b2';
     btn.style.flex = '1 1 0';
@@ -174,10 +184,12 @@ if (data.description && data.description.trim() !== '') {
             btn.parentElement.appendChild(menu);
         }
         menu.innerHTML = '';
-        hidden.forEach(h=>{
+            hidden.forEach(h=>{
             const meta = h;
             const link = document.createElement('a');
-            link.href = meta.url || '#';
+            let lhref = meta.url || '#';
+            if(typeof lhref === 'string' && lhref.startsWith('/')) lhref = lhref.slice(1);
+            link.href = lhref;
             link.innerHTML = (ICONS[meta.icon]||'') + `<span style="margin-left:.5rem">${meta.text||meta.url}</span>`;
             link.style.color = '#fff';
             link.target = '_blank';
