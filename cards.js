@@ -54,7 +54,6 @@ function getIconHTML(meta){
             const content = document.createElement('div');
             content.className = 'card-content';
 
-            // верхня частина (2/3)
             const topDiv = document.createElement('div');
             topDiv.style.flex = '2';
             topDiv.style.display = 'flex';
@@ -66,11 +65,10 @@ function getIconHTML(meta){
 
             const title = document.createElement('div');
             title.className = 'card-title';
-            // Назва
 if (data.title && data.title.trim() !== '') {
     title.textContent = data.title;
 } else {
-    title.style.display = 'none'; // або залишити пустим
+    title.style.display = 'none';
 }
 
 
@@ -79,11 +77,10 @@ if (data.title && data.title.trim() !== '') {
 
             const desc = document.createElement('div');
             desc.className = 'card-description';
-            // Опис
 if (data.description && data.description.trim() !== '') {
     desc.textContent = data.description;
 } else {
-    desc.style.display = 'none'; // або залишити пустим
+    desc.style.display = 'none'; 
 }
 
             const tagsWrap = document.createElement('div');
@@ -100,7 +97,6 @@ if (data.description && data.description.trim() !== '') {
 
             topDiv.append(title, desc, tagsWrap);
 
-            // нижня частина (1/3) для кнопок
             const bottomDiv = document.createElement('div');
             bottomDiv.style.flex = '1';
             bottomDiv.style.width = '100%';
@@ -111,7 +107,6 @@ if (data.description && data.description.trim() !== '') {
             actionsWrap.style.width = '100%';
             actionsWrap.style.display = 'flex';
 
-            // кнопки
             const allActions = cardData.actions || [];
             const MAX_VISIBLE = 4;
             const visible = allActions.slice(0, MAX_VISIBLE);

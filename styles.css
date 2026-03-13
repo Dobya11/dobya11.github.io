@@ -193,14 +193,21 @@ body {
 }
 
 header{
-    padding: 0px;
+    padding: 10px;
     border-bottom: var(--def-gray) 1px solid;
     display: flex;
 }
 .header-section{
+    list-style-type: none;
     width: 100%;
     height: 100;
-    border: var(--def-gray) 1px solid;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+}
+li.header-section{
+    margin: 0px;
+    padding: 5px;
+    float: left;
 }
 i{
     width: 32px;

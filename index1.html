@@ -11,20 +11,11 @@
 <body>
 <header>
     <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
-    <div class="header-section">1</div>
+    <ul class="header-section">
+        <li class="header-section"><a href="/index1.html">Home</a></li>
+        <li class="header-section"></li>
+        <li class="header-section"></li>
+    </ul>
     <div class="header-section">1</div>
 </header>
 <img src="Assets/Banner.png" class="thumbnail">
@@ -50,6 +41,19 @@
 <i data-lucide="list"style="height: 32px; width: 32px;"></i>  
 <i data-lucide="folder"style="height: 32px; width: 32px;"></i>  
 <i data-lucide="bookmark"style="height: 32px; width: 32px;"></i>  <br>
+<script>
+    function loadDevStyles() {
+  const role = new URLSearchParams(window.location.search).get('role');
+  if (role !== 'dev') return;
+
+  const link = Object.assign(document.createElement('link'), {
+    rel: 'stylesheet',
+    href: '/dev.css',
+  });
+  document.head.appendChild(link);
+}
+loadDevStyles();
+</script>
 <script src="cards.js"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
