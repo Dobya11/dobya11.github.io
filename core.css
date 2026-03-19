@@ -1,11 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code&display=swap');
 :root{
+    --color-black-5: hsl(0,0%,5%);
+    --color-black-10: hsl(0,0%,10%);
+    --color-black-15: hsl(0,0%,15%);
 
-    
-    --def-white: #f5f5f5;
-    --def-gray: #4f4f4f;
-    --def-black: #030303;
+    --color-gray-20: hsl(0 ,0%,20%);
+    --color-gray-30: hsl(0,0%,30%);
+    --color-gray-40: hsl(0,0%,40%);
+    --color-gray-50: hsl(0,0%,50%);
+
+    --color-white-85: hsl(0,0%,85%);
+    --color-white-90: hsl(0,0%,90%);
+    --color-white-95: hsl(0,0%,95%);
+
     /*Chnage/\*/
-    --def-font: 16px;
+    --font-size: 16px;
 
     --h0-size: 16rem;
     --h1-size: 8rem;
@@ -14,19 +23,24 @@
     --h4-size: 2rem;
     --h5-size: 1.5rem;
     --h6-size: 0.75rem;
+
+    --bg-color: var(--color-black-5);
+
+    --primary-foreground: var(--color-white-95);
 }
 
 *{
+    background: var(--bg-color);
+    color: var(--color-white-95);
+    font-family: "Google Sans Code", monospace;
+    font-size: var(--font-size);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    background: var(--def-black);
-    color: var(--def-white);
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-    font-size: var(--def-font);
+    
 }
 
 .h0{font-size: var(--h0-size);}
