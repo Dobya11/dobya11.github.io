@@ -1,0 +1,28 @@
+header{
+    padding: 10px;
+    border-bottom: var(--def-gray) 1px solid;
+}
+
+header nav{
+    display: flex;
+    width: 100%;
+    list-style-type: none;
+}
+
+.header-section{
+    flex: 1;
+    margin: 0px 5px 0px 5px;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: var(--def-white);
+    transition: text-shadow 1s ease;
+}
+a:hover{
+    text-shadow: 0px 0px 5px var(--def-white);
+}
+a:active{
+    text-shadow: 0px 0px 15px var(--def-white);
+}

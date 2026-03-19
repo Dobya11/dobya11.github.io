@@ -1,25 +1,7 @@
-:root{
-    --def_white: #f5f5f5;
-    --def-gray: #4f4f4f;
-    --def_black: #030303;
-}
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: var(--def_black);
-    color: var(--def_white);
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-}
-
 .thumbnail { 
     width: 100%;
     display: block;
-     }
+}
 
 .message {
     margin: 20px;
@@ -127,7 +109,7 @@ body {
 
 .card-description {
     font-size: .95rem;
-    color: var(--def_white);
+    color: var(--def-white);
 }
 
 .card-tags {
@@ -161,7 +143,7 @@ body {
     gap: .4rem;
     font-size: .85rem;
     font-weight: 600;
-    color: var(--def_white);
+    color: var(--def-white);
     text-decoration: none;
     white-space: nowrap;
 }
@@ -176,7 +158,7 @@ body {
 .more-menu {
     position: absolute;
     bottom: 160px;
-    background: var(--def_black);
+    background: var(--def-black);
     border-radius: 8px;
     padding: 6px;
     display: none;
@@ -188,27 +170,11 @@ body {
     align-items: center;
     gap: .5rem;
     padding: 6px;
-    color: var(--def_white);
+    color: var(--def-white);
     text-decoration: none;
 }
 
-header{
-    padding: 10px;
-    border-bottom: var(--def-gray) 1px solid;
-    display: flex;
-}
-.header-section{
-    list-style-type: none;
-    width: 100%;
-    height: 100;
-    margin: 0px 5px 0px 5px;
-    display: flex;
-}
-li.header-section{
-    margin: 0px;
-    padding: 5px;
-    float: left;
-}
+
 i{
     width: 32px;
     height: 32px;
