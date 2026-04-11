@@ -1,6 +1,6 @@
 header{
     padding: 10px;
-    border-bottom: var(--def-gray) 1px solid;
+    border-bottom: var(--muted) 1px solid;
 }
 
 header nav{
@@ -10,17 +10,21 @@ header nav{
 }
 
 nav .logo{
-    margin: 0px 5px 0px 5px;
+    margin: auto 0;
 }
 
 nav .site-zones{
     /*TODO: Change name*/
     list-style: none;
     margin-left: auto;
+    padding: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 nav .site-zones > li{
     float: left;
+    margin: 0;
     margin-left: 1rem;
 }
 
