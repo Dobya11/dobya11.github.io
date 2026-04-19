@@ -1,8 +1,10 @@
 ---
-name: "example"
+layout: "project"
+title: "example"
 desc: "1"
 order: 0  
-tags: ["cool","very cool"]
+tags: ["cool","wip"]
+links: ["https://itch.io/"]
 ---
 **Bold text**
 *Italic text*

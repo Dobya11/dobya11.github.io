@@ -13,7 +13,7 @@
     --color-white-90: hsl(0,0%,90%);
     --color-white-95: hsl(0,0%,95%);
 
-    /*Chnage/\*/
+    /*Change/\*/
     --font-size: 16px;
 
     --h0-size: 16rem;
@@ -28,36 +28,41 @@
 
     --primary-foreground: var(--color-white-95);
 
+    --card-bg: var(--color-black-10);
+    --card-shadow: var(--color-black-15);
+
     --muted: var(--color-gray-30);
 
     --lh: 1.2rem;
+}
+
+html{
+    min-height: 100vh;
+     
+    padding: 0;
 }
 
 *{
     font-family: "Google Sans Code", monospace;
     font-size: var(--font-size);
     line-height: var(--lh);
+    
 }
 
 body {
     background: var(--bg-color);
     color: var(--primary-foreground);
-    margin: 0;
+     
     padding: 0;
+    margin: 0;
+    
     box-sizing: border-box;
+    min-height: 100vh;
 }
 
-h1{font-size: var(--h1-size);}
-h2{font-size: var(--h2-size);}
-h3{font-size: var(--h3-size);}
-h4{font-size: var(--h4-size);}
-h5{font-size: var(--h5-size);}
-h6{font-size: var(--h6-size);}
-
-p-card div{
-    width: 300px;
-    height: 450px;
-    background-color: red;
-    border-radius: 8px;
-    padding: 5px;
-}
+h1{font-size: var(--h1-size);line-height: 1em;}
+h2{font-size: var(--h2-size);line-height: 1em;}
+h3{font-size: var(--h3-size);line-height: 1em;}
+h4{font-size: var(--h4-size);line-height: 1em;}
+h5{font-size: var(--h5-size);line-height: 1em;}
+h6{font-size: var(--h6-size);line-height: 1em;}

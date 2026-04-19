@@ -1,0 +1,11 @@
+title: DOBYA
+description: портфоліо
+url: "https://dobya11.github.io"
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+
+exclude:
+  - Gemfile
+  - Gemfile.lock

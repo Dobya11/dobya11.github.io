@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8">
+<meta name="title" content="{{ page.title }}">
+<meta name="desc" content="{{ page.desc }}">
+<meta name="bg" content="{{ page.bg }}">
+<meta name="tags" content='{{ page.tags | jsonify }}'>
+<meta name="links" content='{{ page.links | jsonify }}'>
+<title>{{ page.title }}</title>
+<link rel="icon" href="/Assets/Fav.png">
+<link rel="stylesheet" href="/core.css">
+<link rel="stylesheet" href="/ui.css">
+</head>
+<body>
+    <h1>{{ page.title }}</h1>
+    {{ content }}
+</body>
