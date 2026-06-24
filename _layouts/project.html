@@ -1,17 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <head>
-<meta charset="utf-8">
-<meta name="title" content="{{ page.title }}">
-<meta name="desc" content="{{ page.desc }}">
-<meta name="bg" content="{{ page.bg }}">
-<meta name="tags" content='{{ page.tags | jsonify }}'>
-<meta name="links" content='{{ page.links | jsonify }}'>
-<title>{{ page.title }}</title>
-<link rel="icon" href="/Assets/Fav.png">
-<link rel="stylesheet" href="/core.css">
-<link rel="stylesheet" href="/ui.css">
+  <meta charset="utf-8" />
+  <meta name="title" content="{{ page.title }}" />
+  <meta name="desc" content="{{ page.desc }}" />
+  <meta name="cover" content="/assets/imgs/covers/{{ page.cover }}" />
+  <meta name="tags" content="{{ page.tags | jsonify | xml_escape }}" />
+  <meta name="links" content="{{ page.links | jsonify | xml_escape }}" />
+  <title>{{ page.title }}</title>
+  <link rel="icon" href="/assets/imgs/fav.png" />
+  <link rel="stylesheet" href="/assets/css/core.css" />
+  <link rel="stylesheet" href="/assets/css/ui.css" />
+  <style>
+    header {
+      background-color: var(--bg-color);
+      position: fixed;
+      top: -100%;
+      width: 100%;
+      left: 0;
+      box-sizing: border-box;
+      transition: top 0.3s ease;
+      z-index: 2;
+    }
+
+    header.visible {
+      top: 0;
+    }
+    .empty-image {
+      width: 100%;
+      aspect-ratio: 32/9;
+      background-color: aqua;
+    }
+    aside {
+      border-left: 1px var(--muted) solid;
+      min-width: 300px;
+    }
+    aside hr {
+      margin: 0.5rem 0;
+    }
+    .desc {
+      color: var(--muted-fg);
+    }
+    #tags {
+      display: flex;
+      margin: 0.5rem 0;
+      gap: 0.5rem;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>{{ page.title }}</h1>
-    {{ content }}
+  {% include header.html %}
+  <div class="project-title-container">
+    {% if page.banner %}
+    <img class="project-banner" src="/assets/imgs/banners/{{page.banner}}" />
+    {% else %}
+    <div class="empty-image"></div>
+    {% endif %}
+    <h1 class="project-title">{{ page.title }}</h1>
+  </div>
+  <main class="project-content">
+    <article>{{ content }}</article>
+    <aside>
+      <h5>{{page.title}}</h5>
+      <p class="desc">{{ page.desc }}</p>
+      <b>Tags</b>
+      <section id="tags"></section>
+      <hr />
+    </aside>
+  </main>
+  <script>
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("visible");
+      } else {
+        header.classList.remove("visible");
+      }
+    });
+  </script>
+  <script type="module">
+    import { showTags } from "/assets/js/main.js";
+    const tagSection = document.getElementById("tags");
+    const tags = JSON.parse('{{ page.tags | jsonify | default: "[]" }}');
+    tagSection.innerHTML += showTags(tags);
+  </script>
 </body>

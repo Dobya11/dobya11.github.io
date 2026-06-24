@@ -1,11 +1,4 @@
 {
-    "projects":
-    [
-        "logic-not-found",
-        "example"
-    ],
-    "showcase":
-    [
-        
-    ]
+  "projects": ["logic-not-found", "example"],
+  "showcase": []
 }

@@ -1,19 +1,24 @@
 ---
 layout: "project"
 title: "example"
-desc: "1"
-order: 0  
-tags: ["cool","wip"]
-links: ["https://itch.io/"]
+desc: "123456789012345678901234567890123456789012345678901234567890"
+tags: ["cool", "wip", "wip9", "1"]
+links: ["https://itch.io/", "/projects/example"]
+cover: "ExampleCover.png"
+banner: "ExampleBanner.png"
 ---
+
 **Bold text**
-*Italic text*
+_Italic text_
 ~~Strikethrough~~
 **_Bold and italic_**
 
 # Heading 1
+
 ## Heading 2
+
 ### Heading 3
+
 #### Heading 4
 
 - Item
@@ -51,15 +56,15 @@ console.log(hello);
 | Cell     | Cell     | Cell     |
 | Cell     | Cell     | Cell     |
 
-| Left     | Center   | Right    |
-| :------- | :------: | -------: |
-| Cell     | Cell     | Cell     |
-
+| Left | Center | Right |
+| :--- | :----: | ----: |
+| Cell |  Cell  |  Cell |
 
 ---
 
 \*Not italic\*
 \# Not a heading
+
 <details>
 <summary>Summary</summary>
 Details
