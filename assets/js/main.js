@@ -100,7 +100,7 @@ class Card extends HTMLElement {
       <img src="${bg}" alt="${name}" class="card-image">
       <div class="card-top">
         <h4>${name}</h4>
-        <p>${desc}</p>
+        <p class-"card-description">${desc}</p>
         <div class="tags">${renderTags(tags)}</div>
       </div>
       <div class="card-bottom">

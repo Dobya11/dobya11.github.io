@@ -66,7 +66,7 @@
   -webkit-user-drag: none;
 }
 
-.card :not(.card-image) {
+.card > :not(.card-image) {
   position: relative;
   z-index: 1;
 }
@@ -160,13 +160,15 @@
   font-size: 1.5rem;
   font-weight: 700;
 }
-
+.card-top p,
 .card-description {
   font-size: 0.95rem;
   color: var(--def-white);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
-.card-tags {
+.tags {
   display: flexbox;
   justify-content: center;
   gap: 0.5rem;
@@ -184,15 +186,14 @@
 }
 
 .card-actions {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  display: flex;
   width: 100%;
   height: 100%;
-  justify-content: center;
 }
 
 .action-button {
-  width: 100%;
+  flex: 1;
+  min-width: 0;
   height: 100%;
   border-radius: 0;
   display: flex;
@@ -246,7 +247,6 @@
 .project-title-container {
   position: relative;
   width: 100%;
-  /* aspect-ratio: 32/9;*/
   height: auto;
 }
 
