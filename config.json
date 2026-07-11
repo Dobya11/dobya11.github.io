@@ -11,7 +11,7 @@
       "icon": "/assets/imgs/icons/GitHub.png",
       "label": "GitHub"
     },
-    "internal": { "color": "var(--bg-color)", "icon": "", "label": "Page" }
+    "internal": { "color": "var(--bg-tertiary)", "icon": "", "label": "Page" }
   },
   "tags": {
     "gamedev": {
