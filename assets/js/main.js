@@ -7,6 +7,11 @@ async function init() {
 }
 init();
 
+export async function fetchConfig() {
+  const res = await fetch("/config.json");
+  CONFIG = await res.json();
+}
+
 function safeJSON(val, fallback = []) {
   try {
     return JSON.parse(val || "[]");
@@ -27,7 +32,15 @@ function safeLinks(raw) {
 function getDomain(url) {
   try {
     if (url.startsWith("/")) return "internal";
-    return new URL(url).hostname.replace("www.", "");
+
+    const hostname = new URL(url).hostname.toLowerCase();
+
+    const withoutWww = hostname.replace("www.", "");
+    if (withoutWww === "itch.io" || withoutWww.endsWith(".itch.io")) {
+      return "itch.io";
+    }
+
+    return withoutWww;
   } catch {
     return "internal";
   }
@@ -100,7 +113,7 @@ class Card extends HTMLElement {
       <img src="${bg}" alt="${name}" class="card-image">
       <div class="card-top">
         <h4>${name}</h4>
-        <p class-"card-description">${desc}</p>
+        <p class="card-description">${desc}</p>
         <div class="tags">${renderTags(tags)}</div>
       </div>
       <div class="card-bottom">

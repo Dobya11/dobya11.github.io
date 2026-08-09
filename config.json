@@ -29,6 +29,12 @@
       "bg": "rgba(209,185,23,0.9)",
       "color": "#111"
     },
-    "web": { "label": "Web", "bg": "rgba(14,121,178,0.9)", "color": "#fff" }
+    "new": { "label": "New!", "bg": "rgba(255,255,0,0.9)", "color": "#111" },
+    "web": { "label": "Web", "bg": "rgba(14,121,178,0.9)", "color": "#fff" },
+    "jam": {
+      "label": "For Game Jam",
+      "bg": "rgba(200,0,255,0.9)",
+      "color": "#fff"
+    }
   }
 }

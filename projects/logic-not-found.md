@@ -5,4 +5,4 @@ desc: "404"
 cover: "logic-not-found_cover.png"
 ---
 
-sdfghfdgh
+WIP

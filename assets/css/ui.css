@@ -86,7 +86,13 @@
 
 #showcase:not(.grabbing) .card:hover::before {
   transform: scale(1.15);
-  filter: blur(8px) brightness(0.6);
+  filter: blur(8px) brightness(0.25);
+}
+
+#showcase:not(.grabbing) .card:hover .card-image {
+  opacity: 0.8;
+  transform: scale(0.85);
+  filter: brightness(0.5);
 }
 
 .card::after {
@@ -169,7 +175,7 @@
 }
 
 .tags {
-  display: flexbox;
+  display: flex;
   justify-content: center;
   gap: 0.5rem;
   flex-wrap: wrap;
@@ -245,12 +251,14 @@
 }
 
 .project-title-container {
+  flex: 0;
   position: relative;
   width: 100%;
   height: auto;
 }
 
 .project-content {
+  flex: 1;
   display: grid;
   grid-template-columns: 3fr 1fr;
 }

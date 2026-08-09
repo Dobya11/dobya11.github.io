@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="/assets/css/ui.css" />
   <style>
     header {
-      background-color: var(--bg-color);
       position: fixed;
       top: -100%;
       width: 100%;
@@ -21,6 +20,11 @@
       box-sizing: border-box;
       transition: top 0.3s ease;
       z-index: 2;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header.visible {
@@ -32,19 +36,22 @@
       background-color: aqua;
     }
     aside {
-      border-left: 1px var(--muted) solid;
+      border-left: 1px var(--text-muted) solid;
       min-width: 300px;
+      height: 100%;
     }
     aside hr {
       margin: 0.5rem 0;
     }
     .desc {
-      color: var(--muted-fg);
+      color: var(--text-muted);
     }
     #tags {
       display: flex;
       margin: 0.5rem 0;
       gap: 0.5rem;
+      height: auto;
+      flex-wrap: wrap;
     }
   </style>
 </head>
@@ -80,7 +87,8 @@
     });
   </script>
   <script type="module">
-    import { showTags } from "/assets/js/main.js";
+    import { showTags, fetchConfig } from "/assets/js/main.js";
+    await fetchConfig();
     const tagSection = document.getElementById("tags");
     const tags = JSON.parse('{{ page.tags | jsonify | default: "[]" }}');
     tagSection.innerHTML += showTags(tags);

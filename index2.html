@@ -7,7 +7,7 @@ layout: "def"
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DOBYA</title>
+    <title>DOBYA (WIP)</title>
   </head>
   <body>
     <main>
@@ -20,105 +20,6 @@ layout: "def"
       </div>
     </main>
     <script type="module" src="/assets/js/cards.js"></script>
-    <script>
-      const showcase = document.getElementById("showcase");
-      let isDown = false;
-      let startX;
-      let scrollLeft;
-      let moved = false;
-      let velocity = 0;
-      let lastX;
-      let lastTime;
-      let momentumID;
-      let dragThreshold = 8;
-      let dragDelay = 150;
-      let dragTimer = null;
-      let isDragging = false;
-
-      showcase.addEventListener("mousedown", (e) => {
-        isDown = true;
-        moved = false;
-        isDragging = false;
-        startX = e.pageX - showcase.offsetLeft;
-        scrollLeft = showcase.scrollLeft;
-        lastX = e.pageX;
-        lastTime = Date.now();
-        cancelAnimationFrame(momentumID);
-
-        dragTimer = setTimeout(() => {
-          if (isDown) {
-            isDragging = true;
-            showcase.classList.add("grabbing");
-          }
-        }, dragDelay);
-      });
-
-      showcase.addEventListener("mousemove", (e) => {
-        if (!isDown) return;
-        const x = e.pageX - showcase.offsetLeft;
-        const walk = x - startX;
-
-        if (Math.abs(walk) > dragThreshold) {
-          clearTimeout(dragTimer);
-          isDragging = true;
-          moved = true;
-          showcase.classList.add("grabbing");
-          e.preventDefault();
-        }
-
-        if (!isDragging) return;
-
-        showcase.scrollLeft = scrollLeft - walk;
-        const now = Date.now();
-        velocity = (e.pageX - lastX) / (now - lastTime);
-        lastX = e.pageX;
-        lastTime = now;
-      });
-
-      function stopDragging() {
-        if (!isDown) return;
-        clearTimeout(dragTimer);
-        isDown = false;
-        isDragging = false;
-        showcase.classList.remove("grabbing");
-        startMomentum();
-      }
-
-      document.addEventListener("mouseup", stopDragging);
-      showcase.addEventListener("mouseleave", stopDragging);
-
-      showcase.addEventListener(
-        "click",
-        (e) => {
-          if (moved) {
-            e.preventDefault();
-            e.stopPropagation();
-          }
-          moved = false;
-        },
-        true,
-      );
-
-      function stopDragging() {
-        if (!isDown) return;
-        isDown = false;
-        showcase.classList.remove("grabbing");
-        startMomentum();
-      }
-
-      function startMomentum() {
-        let v = velocity * 20;
-        function momentum() {
-          showcase.scrollLeft -= v;
-          v *= 0.95;
-          if (Math.abs(v) > 8) momentumID = requestAnimationFrame(momentum);
-        }
-        momentum();
-      }
-
-      window.addEventListener("load", () => {
-        showcase.scrollLeft = 0;
-      });
-    </script>
+    <script type="module" src="/assets/js/index2.js"></script>
   </body>
 </html>
