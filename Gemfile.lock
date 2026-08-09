@@ -269,6 +269,8 @@ PLATFORMS
 DEPENDENCIES
   csv
   github-pages
+  jekyll-commonmark-ghpages
+  jemoji
   liquid (~> 4.0.4)
 
 CHECKSUMS
