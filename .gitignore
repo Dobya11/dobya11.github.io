@@ -24,3 +24,4 @@ cabal.project.local~
 _site/
 .jekyll-cache/
 .jekyll-metadata
+/node_modules
