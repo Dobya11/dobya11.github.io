@@ -78,11 +78,22 @@
   </main>
   <script>
     const header = document.querySelector("header");
-    window.addEventListener("scroll", () => {
+
+    function updateHeader() {
       if (window.scrollY > 50) {
         header.classList.add("visible");
       } else {
         header.classList.remove("visible");
+      }
+    }
+
+    window.addEventListener("scroll", updateHeader);
+
+    document.addEventListener("mousemove", (event) => {
+      if (event.clientY < 50) {
+        header.classList.add("visible");
+      } else {
+        updateHeader();
       }
     });
   </script>

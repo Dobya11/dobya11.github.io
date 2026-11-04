@@ -1,6 +1,7 @@
 .thumbnail {
   width: 100%;
   display: block;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .announcement-banner {
